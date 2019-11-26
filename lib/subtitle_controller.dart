@@ -28,7 +28,6 @@ class SubtitleController {
         subtitlesContent = utf8.decode(response.bodyBytes);
       }
     }
-    print(subtitlesContent);
 
     List<RegExpMatch> matches = regExp.allMatches(subtitlesContent).toList();
     List<Subtitle> subtitleList = List();
@@ -59,7 +58,6 @@ class SubtitleController {
       subtitleList.add(
           Subtitle(startTime: startTime, endTime: endTime, text: text.trim()));
     });
-    print(subtitleList);
 
     Subtitles subtitles = Subtitles(subtitles: subtitleList);
     return subtitles;

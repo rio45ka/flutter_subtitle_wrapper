@@ -60,22 +60,28 @@ class _SubtitleTextViewState extends State<SubtitleTextView> {
   Widget build(BuildContext context) {
     return subtitle != null
         ? Container(
-            padding: const EdgeInsets.all(8),
-            color: Colors.black.withOpacity(0.2),
             child: Stack(
               children: <Widget>[
                 widget.subtitleStyle.hasBorder
                     ? Center(
-                        child: Text(
-                          subtitle.text,
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontSize: widget.subtitleStyle.fontSize,
-                            foreground: Paint()
-                              ..style = widget.subtitleStyle.borderStyle.style
-                              ..strokeWidth =
-                                  widget.subtitleStyle.borderStyle.strokeWidth
-                              ..color = widget.subtitleStyle.borderStyle.color,
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 8,
+                            vertical: 5,
+                          ),
+                          color: Colors.black.withOpacity(0.4),
+                          child: Text(
+                            subtitle.text,
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontSize: widget.subtitleStyle.fontSize,
+                              foreground: Paint()
+                                ..style = widget.subtitleStyle.borderStyle.style
+                                ..strokeWidth =
+                                    widget.subtitleStyle.borderStyle.strokeWidth
+                                ..color =
+                                    widget.subtitleStyle.borderStyle.color,
+                            ),
                           ),
                         ),
                       )
@@ -83,12 +89,19 @@ class _SubtitleTextViewState extends State<SubtitleTextView> {
                         child: null,
                       ),
                 Center(
-                  child: Text(
-                    subtitle.text,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: widget.subtitleStyle.fontSize,
-                      color: widget.subtitleStyle.textColor,
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 8,
+                      vertical: 5,
+                    ),
+                    color: Colors.black.withOpacity(0.4),
+                    child: Text(
+                      subtitle.text,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: widget.subtitleStyle.fontSize,
+                        color: widget.subtitleStyle.textColor,
+                      ),
                     ),
                   ),
                 ),

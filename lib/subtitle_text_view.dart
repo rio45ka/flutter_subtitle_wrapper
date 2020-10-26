@@ -39,12 +39,6 @@ class _SubtitleTextViewState extends State<SubtitleTextView> {
     super.initState();
   }
 
-  @override
-  void dispose() {
-    videoPlayerController.dispose();
-    super.dispose();
-  }
-
   _subtitleWatcher(VideoPlayerController videoPlayerController) async {
     Subtitles subtitles = await widget.subtitleController.getSubtitles();
     VideoPlayerValue latestValue = videoPlayerController.value;

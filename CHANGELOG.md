@@ -1,3 +1,7 @@
+## [0.0.6] - 26 oct 2020.
+
+* Add Background for text Subtitle.
+
 ## [0.0.5] - 02 oct 2019.
 
 * Updated readme 

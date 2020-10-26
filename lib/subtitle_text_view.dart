@@ -9,13 +9,15 @@ class SubtitleTextView extends StatefulWidget {
   final SubtitleController subtitleController;
   final VideoPlayerController videoPlayerController;
   final SubtitleStyle subtitleStyle;
+  final double opacityBgText;
 
-  const SubtitleTextView(
-      {Key key,
-      @required this.subtitleController,
-      this.videoPlayerController,
-      this.subtitleStyle})
-      : super(key: key);
+  const SubtitleTextView({
+    Key key,
+    @required this.subtitleController,
+    this.videoPlayerController,
+    this.subtitleStyle,
+    this.opacityBgText = 0.7,
+  }) : super(key: key);
 
   @override
   _SubtitleTextViewState createState() =>
@@ -65,11 +67,12 @@ class _SubtitleTextViewState extends State<SubtitleTextView> {
                 widget.subtitleStyle.hasBorder
                     ? Center(
                         child: Container(
+                          margin: const EdgeInsets.symmetric(horizontal: 10),
                           padding: const EdgeInsets.symmetric(
                             horizontal: 8,
                             vertical: 5,
                           ),
-                          color: Colors.black.withOpacity(0.4),
+                          color: Colors.black.withOpacity(widget.opacityBgText),
                           child: Text(
                             subtitle.text,
                             textAlign: TextAlign.center,
@@ -90,6 +93,7 @@ class _SubtitleTextViewState extends State<SubtitleTextView> {
                       ),
                 Center(
                   child: Container(
+                    margin: const EdgeInsets.symmetric(horizontal: 10),
                     padding: const EdgeInsets.symmetric(
                       horizontal: 8,
                       vertical: 5,

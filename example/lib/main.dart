@@ -102,10 +102,10 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void dispose() {
     super.dispose();
-//    if (videoPlayerController != null && chewieController != null) {
-//      videoPlayerController?.dispose();
-//      chewieController?.dispose();
-//    }
+    if (videoPlayerController != null && chewieController != null) {
+      videoPlayerController?.dispose();
+      chewieController?.dispose();
+    }
     debugPrint('videoPlayerController - dispose()');
   }
 }

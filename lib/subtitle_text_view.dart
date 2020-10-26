@@ -60,6 +60,8 @@ class _SubtitleTextViewState extends State<SubtitleTextView> {
   Widget build(BuildContext context) {
     return subtitle != null
         ? Container(
+            padding: const EdgeInsets.all(8),
+            color: Colors.black.withOpacity(0.2),
             child: Stack(
               children: <Widget>[
                 widget.subtitleStyle.hasBorder
